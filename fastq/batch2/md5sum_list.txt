@@ -1,0 +1,4 @@
+7f08459b9438cff23c3051b54f09ddea  ./DS01-P-2_R1_001.fastq.gz
+f4e4d9037d49ea5e10cff54fa6b9b492  ./DS01-P-2_R2_001.fastq.gz
+e9698224bab4775288725dc7ed9978c5  ./DS02-P-3_R1_001.fastq.gz
+e0e3f5a43fc038a3ce78af90aa279d18  ./DS02-P-3_R2_001.fastq.gz

@@ -1,0 +1,8 @@
+ee5ac1304655780e8c870304d68f1fc6  ./DS01-M_R1_001.fastq.gz
+68e8902ec28eae4fbc50ec132b9d41d8  ./DS01-M_R2_001.fastq.gz
+a38bf4a3d252e048e84b7dae32a44a26  ./DS02-P_R1_001.fastq.gz
+997e0a2a9b0d3f91fe08585eddcaa2f9  ./DS02-P_R2_001.fastq.gz
+0ade52217aaba61c8d25db1ff7b291c4  ./DS03-C2_R1_001.fastq.gz
+d98638bf143cb9a2f26c4696fca33f50  ./DS03-C2_R2_001.fastq.gz
+2eefb324a9b879864044b7941dd64485  ./DS04-C19_R1_001.fastq.gz
+ec8b12d507d72964026750e7180c4182  ./DS04-C19_R2_001.fastq.gz

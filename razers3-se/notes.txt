@@ -1,0 +1,5 @@
+Razers3 has trouble mapping reads with large (36 bp) deletions (total size is 250 bp),
+even with sufficiently large error rate (0.20).
+
+Razers3 has trouble mapping paired-end reads to amplicon where the read 1 is expected
+to map at position 1 and the read 2 is expected to map to the last position.
