@@ -1,0 +1,7 @@
+PCR amplified with high fidelity primers with Genewiz adapters.
+
+Verified by gel electrophorese that there is one dominant band.
+
+Purified PCR product by PCR purification kit.
+
+Sent for Genewiz Amplicon-EZ amplicon sequencing
