@@ -1,0 +1,8 @@
+# manually created from stats.txt
+batch	sample	cell_line	wildtype	parental	revertant
+A	DS01-P	SUM149-P	456	105734	35
+A	DS02-M	MCF10A	98467	31	63
+A	DS03-C2	SUM149-RC1	620	37638	51597
+A	DS04-C19	SUM149-RC3	416	41754	61724
+B	DS01-P-2	SUM149-P	0	58014	0
+B	DS02-P-3	SUM149-P	3	66812	4
