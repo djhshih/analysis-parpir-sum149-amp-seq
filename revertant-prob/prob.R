@@ -18,27 +18,18 @@ revertant_prob <- function(n, p) {
 
 # GRCh38.p13 has 3,110,748,599 non-N bases
 
-# BRCA1
-# 20.7 indels
-# 5652 / 3110748599 proportion of on-target positions
-# 1/3 of indels will restore reading frame across all sizes of the indel
-#    This is a conservative approximation, since Zamborszky 2016 showed that
-#    single-base insertions and deletions account for the major of indels
-#    Therefore, a +1 frameshift indel mutation can be rescued by
-#    a 1 bp deletion (or a 2 bp insertion)
-#    Accurate calculation will depend on the original indel.
-#    A 1 bp insertion can be rescued by a 1 bp deletion or 2 bp insertion.
-#    But a 1 bp deletion can be rescued by a 1 bp insertion or 2 bp deletion.
-#    Deletions are more common than insertions.
 # second indel can be before or after the original frameshift mutation
+# the limiting factor is where the first indel introduces a pre-mature stop
+# codon due to the frameshift, as well as where the second indel would
+# introduce a pre-mature stop codong due to frameshift
 
 
 # number of cells
 n <- 1e6;
 
-rescuable <- 0.05;
-rescuable.lower <- 0.01;
-rescuable.upper <- 0.1;
+rescuable <- 120;
+rescuable.lower <- 60;
+rescuable.upper <- 600;
 
 # BRCA1
 
@@ -56,15 +47,15 @@ d <- 5;
 ns <- 10^seq(1, 8, 0.05);
 
 # probability of having a revertant mutation in one genome
-p <- dbinom(1, d, target * rescuable / genome);
+p <- dbinom(1, d, rescuable / genome);
 probs <- vapply(ns, revertant_prob, p = p, 0);
 
 revertant_prob(1e6, p)
 
-p.lower <- dbinom(1, d, target * rescuable.lower / genome);
+p.lower <- dbinom(1, d, rescuable.lower / genome);
 probs.lower <- vapply(ns, revertant_prob, p = p.lower, 0);
 
-p.upper <- dbinom(1, d, target * rescuable.upper / genome);
+p.upper <- dbinom(1, d, rescuable.upper / genome);
 probs.upper <- vapply(ns, revertant_prob, p = p.upper, 0);
 
 d.brca1 <- data.frame(
@@ -89,23 +80,22 @@ qdraw(
 
 # BRCA2
 
-target <- 10254;
 genome <- 3110748599;
 
 # expected number of 1-bp insertion per genome
 d <- 6;
 
-revertant_prob(1e6, dbinom(1, d, target * rescuable / genome))
-revertant_prob(1e6, dbinom(1, 1, target * rescuable / genome))
+revertant_prob(1e6, dbinom(1, d, rescuable / genome))
+revertant_prob(1e6, dbinom(1, 1, rescuable / genome))
 
 # probability of having a revertant mutation in one genome
-p <- dbinom(1, d, target * rescuable / genome);
+p <- dbinom(1, d, rescuable / genome);
 probs <- vapply(ns, revertant_prob, p = p, 0);
 
-p.lower <- dbinom(1, d, target * rescuable.lower / genome);
+p.lower <- dbinom(1, d, rescuable.lower / genome);
 probs.lower <- vapply(ns, revertant_prob, p = p.lower, 0);
 
-p.upper <- dbinom(1, d, target * rescuable.upper / genome);
+p.upper <- dbinom(1, d, rescuable.upper / genome);
 probs.upper <- vapply(ns, revertant_prob, p = p.upper, 0);
 
 d.brca2 <- data.frame(
